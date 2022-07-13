@@ -1,4 +1,4 @@
-\documentclass{llncs}
+\documentclass{article}
 
 \usepackage{centernot}
 \usepackage{epsfig}
@@ -11,7 +11,14 @@
 \usepackage{marvosym}
 \usepackage{amsmath} % for xrightarrow
 \usepackage{amsthm}
+\usepackage{txfonts}
 \usepackage{hyperref}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
 
 
 \input macros
@@ -22,7 +29,9 @@
 
 \maketitle
 
-\input axioms
+\input basic-props
+
+\input proofs
 
 
 

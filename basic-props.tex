@@ -1,0 +1,33 @@
+
+\begin{definition}[Basic axioms]\label{def:basic}
+  % Let $\mc L = (\Proc,\Lab,\tran{},\ind)$ be a combined LTSI.
+  We say an LTSI $\mc L$ satisfies:
+  \begin{description}
+  \item[Square property (SP)] if whenever $t:P \ptran \alpha Q$, $u:P
+    \ptran \beta R$ with $t \ind u$ then there are cofinal transitions
+    $u': Q \ptran \beta S$ and $t':R \ptran \alpha S$;%\vspace{1pt}
+  \item[Backward transitions are independent (BTI)] if whenever $t:P \prtran a
+    Q$ and $t': P \prtran b Q'$ 
+    and $t \neq t'$ then either $t \ind t'$ or $\exists~a_c, b_c$ such that
+    $\sigma_1= aa_c$, $\sigma_2 = bb_c$ and $\sigma_1 \ind \sigma_2$
+  \item[Well-foundedness (WF)] if there is no infinite reverse
+    computation, i.e.\ we do not have $P_i$ (not necessarily distinct)
+    such that $P_{i+1} \tran {a_i} P_i$ for all $i = 0,1,\ldots$.
+  \end{description}
+\end{definition}
+
+\begin{definition}[Causal equivalence]\label{def:ceqt}
+  % Let $(\Proc,\Lab,\tran{},\ind)$ be an
+  Consider an LTSI satisfying SP.
+  Let $\ceqt$ be the smallest equivalence relation on paths closed under composition and satisfying:
+  \begin{enumerate}
+  \item
+    (swap)  
+    if $t:P \tran \alpha Q$, $u:P \tran \beta R$ are independent,
+    and $u': Q \tran \beta S$, $t':R \tran \alpha S$ (which exist by SP)
+    then $tu' \ceqt ut'$;
+  \item
+    (cancellation)
+    $t \rev t \ceqt \es$ \quad and \quad $\rev t t \ceqt \es$.
+  \end{enumerate}
+\end{definition}
