@@ -1,15 +1,18 @@
 
+
+
 \begin{definition}[Basic axioms]\label{def:basic}
   % Let $\mc L = (\Proc,\Lab,\tran{},\ind)$ be a combined LTSI.
   We say an LTSI $\mc L$ satisfies:
   \begin{description}
-  \item[Square property (SP)] if whenever $t:P \ptran \alpha Q$, $u:P
-    \ptran \beta R$ with $t \ind u$ then there are cofinal transitions
-    $u': Q \ptran \beta S$ and $t':R \ptran \alpha S$;%\vspace{1pt}
-  \item[Backward transitions are independent (BTI)] if whenever $t:P \prtran a
-    Q$ and $t': P \prtran b Q'$ 
-    and $t \neq t'$ then either $t \ind t'$ or $\exists~a_c, b_c$ such that
-    $\sigma_1= aa_c$, $\sigma_2 = bb_c$ and $\sigma_1 \ind \sigma_2$
+  \item[Square property (SP)] if whenever $r:P \ptran{\sigma} Q$, $s:P
+    \ptran{\rho} R$ with $\sigma \ind \rho$ then there are cofinal
+    transitions $s': Q \ptran{\rho} S$ and $r':R \ptran{\sigma}
+    S$;%\vspace{1pt}
+  \item[Backward transitions are independent (BTI)] if whenever $r:P
+    \prtran{\sigma} Q$ and $s: P \prtran{\rho} Q'$ where $Q\neq Q'$ and $\sigma \neq
+    \rho$ then either $\sigma \ind \rho$ or $\exists~\sigma_c,
+    \rho_c$ such that $\sigma_c\sigma \ind \rho\rho_c$
   \item[Well-foundedness (WF)] if there is no infinite reverse
     computation, i.e.\ we do not have $P_i$ (not necessarily distinct)
     such that $P_{i+1} \tran {a_i} P_i$ for all $i = 0,1,\ldots$.
@@ -23,11 +26,11 @@
   \begin{enumerate}
   \item
     (swap)  
-    if $t:P \tran \alpha Q$, $u:P \tran \beta R$ are independent,
-    and $u': Q \tran \beta S$, $t':R \tran \alpha S$ (which exist by SP)
-    then $tu' \ceqt ut'$;
+    if $r:P \tran{\sigma} Q$, $s:P \tran{\rho} R$ are independent,
+    and $s': Q \tran{\sigma} S$, $r':R \tran{\rho} S$ (which exist by SP)
+    then $rs' \ceqt sr'$;
   \item
     (cancellation)
-    $t \rev t \ceqt \es$ \quad and \quad $\rev t t \ceqt \es$.
+    $r \rev r \ceqt \es$ \quad and \quad $\rev r r \ceqt \es$.
   \end{enumerate}
 \end{definition}
