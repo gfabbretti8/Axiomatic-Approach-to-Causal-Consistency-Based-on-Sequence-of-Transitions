@@ -1,7 +1,15 @@
 
 
+
+
+
+
+
+
+
 \begin{definition}[Parabolic Lemma]
-  For any path $r$ there exist paths $r',r''$ and forward only paths $s,s'$ such that $r'rr'' \approx \rev{s}s'$.
+  For any path $r$ there exist paths $r',r''$ and forward only paths $s,s'$ such
+  that $r'rr'' \approx \rev{s}s'$ and $|r'rr''| \leq |ss'|$.
 \end{definition}
 
 \begin{proposition}
@@ -9,28 +17,22 @@
 \end{proposition}
 \begin{proof}
   Suppose $BTI$ and $SP$ hold. Define a function on path as follows: d(s) is the
-  number of pairs $(\sigma_1,\sigma_2)$ such that $\sigma_1$ occurs to the left of $\rev{\sigma_2}$ in $s$.
+  number of pairs $(a,b)$ such that $a$ occurs to the left of $\rev{b}$ in $s$.
   Clearly $s$ is parabolic iff $d(s)=0$. \\
 
-  Suppose $d(s)>0$. We show that there is $s' \approx s$ and $d(s') < d(s)$.
+  Suppose $d(z)>0$. We show that there is $z' \approx z$ and $d(z') < d(z)$.
   \begin{description}
   \item[Case $d(s)>0$] Now there are two cases to consider.
     \begin{description}
-    \item[Case $t = u$] Then $\delta_1 t\rev{u}\delta_2 \approx
+    \item[Case $r = s$] Then $\delta_1 r\rev{s}\delta_2 \approx
       \delta_1\delta_2$.
-    \item[Case $t \neq u$] In this case thanks to $BTI$ we know that there are
-      two cases to consider.
-      \begin{description}
-      \item[Case $\rev{t} \ind \rev{u}$] Then by $SP$ we have $\rev{t}\rev{u'}
-        \approx \rev{u}\rev{t'}$. Hence $s= \sigma_1t\rev{u}\sigma_2 \approx
-        \sigma_1 t\rev{u}\rev{t'}t'\sigma_2 \approx \sigma_1
-        t\rev{t}\rev{u'}t'\sigma_2 \approx \sigma_1 \sigma_2=s'$.
-        
-      \item[Case $t \not\ind \rev{u}$] In this case thanks to $BTI$ we know that
-        there exist $t_c$ and $\rev{u_c}$ s.t. $t_ct \ind \rev{uu_c}$. Then by
-        $SP$ we can apply the same reasoning as the previous case.
-        
-      \end{description}
+    \item[Case $\rev u \neq \rev{t}$] In this case thanks to $BTI$ we know that
+      there exist $\rev r$ and $\rev{s}$ s.t. $\rev u \rev r \ind \rev t \rev s$ Then
+      by $SP$ we have $\rev u \rev r \rev t' \rev s'
+      \approx \rev t \rev s \rev u' \rev r'$. Then $z=\delta_1 u \rev t
+      \delta_2 = \delta_1 u \rev t \rev s \rev u' \rev r' r' u' s \delta_2 =
+      \delta_1 u  \rev u \rev r \rev t' \rev s' r' u' s \delta_2 = \delta_1 \rev r \rev t' \rev s' r' u' s \delta_2$ 
+      
     \end{description}
   \end{description}
   
