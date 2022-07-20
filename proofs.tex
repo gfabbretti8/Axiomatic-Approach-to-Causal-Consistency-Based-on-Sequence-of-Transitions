@@ -8,8 +8,8 @@
 
 
 \begin{definition}[Parabolic Lemma]
-  For any path $r$ there exist paths $r',r''$ and forward only paths $s,s'$ such
-  that $r'rr'' \approx \rev{s}s'$ and $|r'rr''| \leq |ss'|$.
+  For any path $r$ there exist forward only paths $s,s'$ such
+  that $r \ceqt \rev{s}s'$.
 \end{definition}
 
 \begin{proposition}
@@ -20,27 +20,45 @@
   number of pairs $(a,b)$ such that $a$ occurs to the left of $\rev{b}$ in $s$.
   Clearly $s$ is parabolic iff $d(s)=0$. \\
 
-  Suppose $d(z)>0$. We show that there is $z' \approx z$ and $d(z') < d(z)$.
-  \begin{description}
-  \item[Case $d(s)>0$] Now there are two cases to consider.
+  Suppose $d(z)>0$. We show that there is $z' \ceqt z$ and $d(z') < d(z)$.
+  Since $d(z) > 0$, we have $z = \delta_1 t\rev{u}\delta_2$ with
+  $\delta_1:P \tran {\sigma_1} R$,
+  $t:R \tran a S$, $\rev u:S \tran {\rev b} T$ and $\delta_2:T \tran {\sigma_2} Q$.
+  
     \begin{description}
-    \item[Case $r = s$] Then $\delta_1 r\rev{s}\delta_2 \approx
+    \item[Case $t = u$] Then $\delta_1 t\rev{u}\delta_2 \approx
       \delta_1\delta_2$.
-    \item[Case $\rev u \neq \rev{t}$] In this case thanks to $BTI$ we know that
-      there exist $\rev r$ and $\rev{s}$ s.t. $\rev u \rev r \ind \rev t \rev s$ Then
+    \item[Case $ t \neq  u$] In this case thanks to $BTI$ we know that
+      there exist $\rev r$ and $\rev s$ s.t. $\rev t \rev s \ind \rev u \rev r$, where
+       $\rev r: T \tran{\rev \rho_1} T'$ and $\rev s: R \tran{\rev \rho_2} R'$.
+      Then
       by $SP$ we have $\rev u \rev r \rev t' \rev s'
-      \approx \rev t \rev s \rev u' \rev r'$. Then $z=\delta_1 u \rev t
-      \delta_2 = \delta_1 u \rev t \rev s \rev u' \rev r' r' u' s \delta_2 =
-      \delta_1 u  \rev u \rev r \rev t' \rev s' r' u' s \delta_2 = \delta_1 \rev r \rev t' \rev s' r' u' s \delta_2$ 
+      \ceqt \rev t \rev s \rev u' \rev r'$, where 
       
+       $\rev t': T' \tran{\rev a} V$ and $\rev s': V \tran{\rev \rho_2} V'$ 
+       and 
+       $\rev r': V' \tran{\rev \rho_1} U$ and $\rev u': U \tran{\rev b} R'$.
+      
+      Then $
+      z = \delta_1 t \rev u \delta_2 \ceqt 
+      \delta_1 t \rev u \rev r \rev t' \rev s' s' t' r \delta_2  \ceqt 
+      \delta_1 t  \rev t \rev s \rev u' \rev r' s' t' r \delta_2   \ceqt 
+      \delta_1 \rev s \rev u' \rev r' s' t' r \delta_2
+      $ 
+      
+      
+%      Then $z=\delta_1 u \rev t
+%      \delta_2 \ceqt \delta_1 u \rev t \rev s \rev u' \rev r' r' u' s \delta_2 \ceqt
+%      \delta_1 u  \rev u \rev r \rev t' \rev s' r' u' s \delta_2 \ceqt \delta_1 \rev r \rev t' \rev s' r' u' s \delta_2$ 
     \end{description}
-  \end{description}
+
   
 \end{proof}
 
 \begin{definition}\label{def:cc}
   {\bf Causal Consistency (CC)}: if $r$ and $s$ are coinitial and cofinal paths then $r \ceqt s$.
 \end{definition}
+
 
 \begin{proposition}\label{prop:PL WF CC}
   Suppose an LTSI satisfies WF and PL. 
@@ -50,7 +68,8 @@
   Let $r:P \ptran \rho Q$ and $r':P \ptran {\rho'} Q$.
   Using WF, let $I,s$ be such that $s:I \ptran \sigma P$, $I \in \Irr$.
   Now $sr\rev{sr'}$ is a path from $I$ to $I$,
-  and so by PL there are $r_1,r_2$ forward-only such that $\rev{r_1}r_2 \ceqt sr\rev{sr'}$.
+  and so by PL there are $r_1,r_2$ forward-only 
+  such that $\rev{r_1}r_2 \ceqt sr\rev{sr'}$.
   But $I \in \Irr$ and so $r_1 = \es$ and $r_2 = \es$.
   Thus $\es \ceqt sr\rev{sr'}$, so that $sr \ceqt sr'$ and $r \ceqt r'$
   as required.
